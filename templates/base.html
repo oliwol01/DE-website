@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+    <!-- Navbar (optional later) -->
+    <nav class="p-3 bg-light">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>
