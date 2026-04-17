@@ -4,20 +4,33 @@
 
 {% block content %}
 
-<div class="container-fluid p-0 position-relative">
+{% set bg = url_for('static', filename='img/nuclear-og.jpg') %}
 
-     <div class="position-absolute top-50 start-50 translate-middle text-white text-center w-100"
-         style="z-index: 2;">
-        <h1 class="fw-bold">Energy and Emissions Data per Country</h1>
+<div class="d-flex align-items-center text-white"
+     style="min-height:100vh; background:url('{{ bg }}') center/cover no-repeat;">
+
+    <div class="px-5 py-5" style="max-width:800px;">
+
+        <h1 class="display-3 font-weight-bold mb-4">
+            Nuclear Energy<br>
+            <span style="color:#CB6E04;">and Emissions</span><br>
+            in Europe.
+        </h1>
+
+        <p class="lead mb-5" style="max-width:520px; opacity:0.9;">
+            Explore how nuclear electricity production relates to carbon emissions across EU countries.
+        </p>
+
+        <a href="#data-preview"
+           class="d-inline-flex align-items-center bg-white text-dark font-weight-bold px-4 py-2 rounded-pill text-decoration-none">
+            Explore the Data
+            <span class="ml-2">↓</span>
+        </a>
+
     </div>
-    <img src="{{ url_for('static', filename='img/nuclear-og.jpg') }}"
-         class="img-fluid w-100"
-         style="height: 400px; object-fit: cover;">
-
 </div>
 
-<!-- DATA SECTION -->
-<div class="container mt-4">
+<div id="data-preview" class="container mt-4">
 
     <h3>Data Preview</h3>
 
@@ -30,5 +43,14 @@
     {% endfor %}
 
 </div>
+
+{% block scripts %}
+<script>
+    document.querySelector('a[href="#data-preview"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('data-preview').scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+{% endblock %}
 
 {% endblock %}

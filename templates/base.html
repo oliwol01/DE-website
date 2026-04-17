@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
 
-    <!-- Navbar (optional later) -->
-    <nav class="p-3 bg-light">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-    </nav>
+<nav class="position-absolute w-100 px-4 py-3 d-flex align-items-center justify-content-between" style="z-index:100; top:0;">
 
-    {% block content %}{% endblock %}
+    <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" height="70">
+    </a>
+
+    <a href="{{ url_for('about') }}" class="btn btn-custom rounded-pill px-4">About</a>
+
+</nav>
+
+{% block content %}{% endblock %}
 
 </body>
 </html>
