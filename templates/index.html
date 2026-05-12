@@ -1,56 +1,16 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
-{% block title %}Home{% endblock %}
+{% block title %}
+Home
+{% endblock %} 
 
-{% block content %}
+{% block content%} 
 
-{% set bg = url_for('static', filename='img/nuclear-og.jpg') %}
-
-<div class="d-flex align-items-center text-white"
-     style="min-height:100vh; background:url('{{ bg }}') center/cover no-repeat;">
-
-    <div class="px-5 py-5" style="max-width:800px;">
-
-        <h1 class="display-3 font-weight-bold mb-4">
-            Nuclear Energy<br>
-            <span style="color:#CB6E04;">and Emissions</span><br>
-            in Europe.
-        </h1>
-
-        <p class="lead mb-5" style="max-width:520px; opacity:0.9;">
-            Explore how nuclear electricity production relates to carbon emissions across EU countries.
-        </p>
-
-        <a href="#data-preview"
-           class="d-inline-flex align-items-center bg-white text-dark font-weight-bold px-4 py-2 rounded-pill text-decoration-none">
-            Explore the Data
-            <span class="ml-2">↓</span>
-        </a>
-
-    </div>
-</div>
-
-<div id="data-preview" class="container mt-4">
-
-    <h3>Data Preview</h3>
-
-    {% for row in data %}
-        <p>
-            {{ row.country_name }} | {{ row.year }} |
-            {{ "%.2f"|format(row.nuclear_share) }} |
-            {{ "%.2f"|format(row.co2_per_capita) }}
-        </p>
-    {% endfor %}
-
-</div>
-
-{% block scripts %}
-<script>
-    document.querySelector('a[href="#data-preview"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('data-preview').scrollIntoView({ behavior: 'smooth' });
-    });
-</script>
-{% endblock %}
+{% include "sections/hero.html" %}
+{% include "sections/insights.html" %}
+{% include "sections/energy-context.html" %}
+{% include "sections/map.html" %}
+{% include "sections/energy-transition.html" %}
+{% include "sections/country-trends.html" %}
 
 {% endblock %}

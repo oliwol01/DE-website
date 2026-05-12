@@ -1,0 +1,52 @@
+<section class="text-white py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-9">
+        <div
+          class="trends-wrapper rounded-4 d-flex flex-column gap-5 p-4 p-lg-5 overflow-hidden"
+        >
+          <!-- SECTION HEADER -->
+          <div class="d-flex flex-column gap-4">
+            <div>
+              <h2 class="font-heading fw-light mb-3">Country Energy Trends</h2>
+
+              <p class="fw-light fs-6 text-white mb-0">
+                Explore how nuclear electricity share and CO₂ emissions evolved
+                across Europe between 2016-2024.
+              </p>
+            </div>
+
+            <!-- CONTROLS -->
+            <div class="d-flex align-items-center pt-1">
+              <select
+                id="country-select"
+                class="form-select bg-dark bg-opacity-75 border shadow-none text-white fs-5 fw-light px-4 py-2 w-auto rounded-4"
+              ></select>
+            </div>
+          </div>
+
+          <!-- CHART AREA -->
+          <div
+            class="chart-container rounded-4 border border-light border-opacity-10 overflow-hidden p-3 p-md-4"
+          >
+            <canvas id="country-trends-chart"></canvas>
+          </div>
+
+          <!-- ANALYSIS -->
+          <div class="d-flex flex-column gap-3">
+            <div
+              class="fs-5 text-uppercase fw-semibold text-white"
+            >
+              Analysis
+            </div>
+
+            <p
+              id="country-analysis"
+              class="fw-light fs-6 lh-lg mb-0 text-white"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<section id="insights" class="insights-section text-white py-5">
+
+  <div class="container">
+    <!-- SECTION HEADER -->
+
+    <div class="text-center mb-5">
+      <h2 class="font-heading display-6 fw-light mb-3">Europe at a Glance</h2>
+
+      <p
+        class="fs-5 text-white mx-auto mb-0 insights-subtitle fw-light"
+      >
+        Key patterns emerging from nuclear electricity production and carbon emissions data across EU countries in 2024.
+      </p>
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="row justify-content-center g-4">
+      {% for insight in insights %}
+
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="insight-card p-4 rounded-5 h-100">
+          <p class="text-uppercase mb-4 text-white">{{ insight.label }}</p>
+
+          <h3 class="font-heading display-4 fw-medium text-white mb-3">
+            {{ insight.value }}
+          </h3>
+
+          <p class="text-white lh-lg mb-0">{{ insight.text }}</p>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,10 +1,240 @@
-.btn-custom {
-    background-color: #CB6E04;
-    color: #fff;
-    border: none;
+/* ─────────────────────────────
+   GLOBAL STYLES
+───────────────────────────── */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #020a23;
 }
 
-.btn-custom:hover {
-    background-color: #a85a03;
-    color: #fff;
+/* ─────────────────────────────
+   HERO SECTION
+───────────────────────────── */
+
+.logo-text {
+  font-family: "Sora", sans-serif;
+}
+.logo-accent {
+  color: #8fd3ff;
+}
+.text-gradient {
+  background: linear-gradient(90deg, #a5dbff 0%, #67bdf6 50%, #43adf4 100%);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+.hero-button {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 500;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+  background: rgba(255, 255, 255, 0.14);
+
+  color: white;
+
+  text-decoration: none;
+}
+.hero-section {
+  min-height: 100vh;
+
+  background: url("../img/header-img.png") center center / cover no-repeat;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+/* ─────────────────────────────
+   TYPOGRAPHY
+───────────────────────────── */
+.font-heading {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* ─────────────────────────────
+   INSIGHTS SECTION
+───────────────────────────── */
+.insights-subtitle {
+  max-width: 700px;
+}
+
+/* ─────────────────────────────
+   INSIGHT CARDS
+───────────────────────────── */
+.insight-card {
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(0, 255, 255, 0.14);
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 24px rgba(0, 255, 255, 0.06);
+}
+
+/* ─────────────────────────────
+   EUROPE MAP SECTION
+───────────────────────────── */
+.map-wrapper {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.map-wrapper svg path {
+  fill: #878787;
+  transition: fill 0.25s ease;
+}
+.map-wrapper svg {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.map-legend {
+  width: 180px;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #20356b 0% 25%,
+    #2a5298 25% 50%,
+    #2d79c7 50% 75%,
+    #6fc7ff 75% 100%
+  );
+  opacity: 0.9;
+}
+.map-section h2 {
+  letter-spacing: -0.03em;
+}
+
+.map-subtitle {
+  max-width: 760px;
+  opacity: 0.82;
+}
+#map-tooltip {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(12, 18, 32, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  padding: 0.75rem 0.95rem;
+  border-radius: 14px;
+  color: white;
+  min-width: 170px;
+  z-index: 999;
+  transition: opacity 0.14s ease;
+  transform: translateY(0);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+/* ─────────────────────────────
+   COUNTRY TRENDS SECTION
+───────────────────────────── */
+#country-trends-chart {
+  width: 100% !important;
+
+  height: 100% !important;
+}
+.trends-wrapper {
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.22);
+}
+
+#country-select {
+  min-width: 190px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+#country-select:hover {
+  background-color: #0b4362 !important;
+}
+
+#country-select:focus {
+  box-shadow: none;
+
+  outline: none;
+
+  background-color: #0b4362 !important;
+}
+
+.chart-container {
+  position: relative;
+
+  height: 520px;
+
+  background: rgba(255, 255, 255, 0.015);
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ─────────────────────────────
+   REPORT LINKS
+───────────────────────────── */
+
+.report-link {
+  color: rgba(255, 255, 255, 0.72);
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+  padding-bottom: 0.2rem;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.report-link:hover {
+  color: #ffffff;
+
+  border-color: #8fd3ff;
+
+  transform: translateX(3px);
+}
+
+/* ─────────────────────────────
+   RESPONSIVE
+───────────────────────────── */
+@media (max-width: 768px) {
+  .chart-container {
+    height: 340px;
+  }
+
+  #country-select {
+    width: 100%;
+  }
+}
+/* ─────────────────────────────
+   NARRATIVE DIVIDERS
+───────────────────────────── */
+.narrative-divider {
+  border-color: #8fd3ff !important;
+
+  border-top-width: 3px !important;
+
+  border-bottom-width: 3px !important;
 }
